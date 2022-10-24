@@ -1,0 +1,38 @@
+<h3>Agregar <small>{{ nuevo.nombre }}</small></h3>
+<hr>
+
+<!-- EL NGSUBMITE ES UN EVENTO PERSONALIZADO DE ANGUALAR  -->
+<!--
+
+    [(ngModel)] las llaves [] indican que hay un valor que se enlaza
+    el ng model lleva un atributo name, esta sintaxis me escucha y emite un evento
+    sobre el valor al que le establezco
+
+    1) [ ]  -> establece una propiedad a un objeto
+    2) ( ) -> emitir o escuchar un evento
+
+-->
+<form (ngSubmit)="agregar()">
+    <input 
+        type="text" 
+        placeholder="Nombre" 
+        name="nombre"
+    
+        [(ngModel)]="nuevo.nombre"
+    />
+    <!-- [value]="nuevo.nombre"
+        (input)="cambiarNombre( $event )" -->
+
+    <input 
+        type="number" 
+        placeholder="Poder" 
+        name="poder"
+        [(ngModel)]="nuevo.poder"
+    />
+<!-- en angular cuando pongo (parentesis) le digo que esta escuchando un evento
+ -->
+    <button type="submit">
+        Agregar
+    </button>
+
+</form>
